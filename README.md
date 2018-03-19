@@ -22,3 +22,7 @@ ping ever 100ms, use GET not HEAD, show status codes, use pretty colors
 add a `-it` to run command and a `-K` to httping
 
 `docker run -it --rm bretfisher/httping -i .1 -GsYK https://www.google.com`
+
+### License
+
+This repo and Dockerfile are MIT licensed. All software including httping are licensed by their owners.
