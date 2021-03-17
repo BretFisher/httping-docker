@@ -18,7 +18,7 @@ RUN git clone https://github.com/flok99/httping.git \
     && chmod +x httping
 
 # to prevent image bloat, lets do a multi-stage build and only copy the binary needed
-FROM debian:buster-slim
+FROM debian:buster-slim as release
 
 RUN set -x \
     && apt-get update \
