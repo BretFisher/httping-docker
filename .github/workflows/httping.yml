@@ -36,8 +36,8 @@ jobs:
           images: |
             bretfisher/httping
             ghcr.io/bretfisher/httping
-          # add git short SHA as Docker tag
-          tag-sha: false
+          tag-custom: latest
+          tag-custom-only: true
       -
         # we need qemu and buildx so we can build multiple platforms later
         name: Set up QEMU
@@ -65,7 +65,6 @@ jobs:
         name: Build and push clock
         uses: docker/build-push-action@v2
         with:
-          # context: release
           platforms: linux/amd64,linux/arm64,linux/arm/v7,linux/arm/v6
           # don't push during a pull_request, only build
           push: ${{ github.event_name != 'pull_request' }}
