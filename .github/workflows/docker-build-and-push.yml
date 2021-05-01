@@ -1,4 +1,4 @@
-name: httping
+name: Build and Push Image
 
 on:
   push:
@@ -7,15 +7,13 @@ on:
     # only build when important files change
     paths:
       - 'Dockerfile'
-      - '.github/workflows/httping.yml'
-  # we want pull requests so we can build(test) but not push to image registry
+      - '.github/workflows/docker-build-and-push.yml'  # we want pull requests so we can build(test) but not push to image registry
   pull_request:
     branches:
       - 'main'
     paths:
       - 'Dockerfile'
-      - '.github/workflows/httping.yml'
-  schedule:
+      - '.github/workflows/docker-build-and-push.yml'  schedule:
     # re-run montly to keep image fesh with upstream base images
     - cron: '0 12 15 * *'
  
