@@ -1,19 +1,23 @@
+---
 name: Build and Push Image
 
 on:
+  # we want pull requests so we can build(test) but not push to image registry
+  pull_request:
+    branches:
+      - 'main'
+    # only build when important files change
+    paths:
+      - 'Dockerfile'
+      - '.github/workflows/docker-build-and-push.yml'
   push:
     branches:
       - 'main'
     # only build when important files change
     paths:
       - 'Dockerfile'
-      - '.github/workflows/docker-build-and-push.yml'  # we want pull requests so we can build(test) but not push to image registry
-  pull_request:
-    branches:
-      - 'main'
-    paths:
-      - 'Dockerfile'
-      - '.github/workflows/docker-build-and-push.yml'  schedule:
+      - '.github/workflows/docker-build-and-push.yml'
+  schedule:
     # re-run montly to keep image fesh with upstream base images
     - cron: '0 12 15 * *'
  
@@ -40,10 +44,12 @@ jobs:
         name: Set up QEMU
         uses: docker/setup-qemu-action@v1
       -
+        # BuildKit (used with `docker buildx`) is the best way to build images
         name: Set up Docker Buildx
         id: buildx
         uses: docker/setup-buildx-action@v1
       -
+        # This makes image builds fast!      
         name: Cache Docker layers
         uses: actions/cache@v2
         with:
@@ -67,7 +73,8 @@ jobs:
           username: ${{ github.repository_owner }}
           password: ${{ secrets.GITHUB_TOKEN }}
       -
-        # this will build the images, once per platform, then push to both hub and ghcr
+        # this will build the images, once per platform, 
+        # then push to both Docker Hub and GHCR
         name: Build and push
         id: docker_build
         uses: docker/build-push-action@v2

@@ -1,11 +1,11 @@
-## Docker slim image of httping, built from source
+# Docker image of httping
 
 [![GitHub Super-Linter](https://github.com/bretfisher/httping-docker/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
 ![Build and Push Image](https://github.com/bretfisher/httping-docker/actions/workflows/docker-build-and-push.yml/badge.svg?branch=main)
 
 This container image is stored on docker hub: [bretfisher/httping](https://hub.docker.com/r/bretfisher/httping/)
 
-It builds from source repo at [github.com/flok99/httping0[https://github.com/flok99/httping] including all optional features
+It builds from source repo at [github.com/flok99/httping](https://github.com/flok99/httping) including all optional features
 like the ncurses GUI `-K`, TCP fast open `-F`, and SSL `-l`.
 
 ### Basic example at docker CLI
