@@ -1,0 +1,243 @@
+.\" Copyright Folkert van Heusden, 2003-2016
+.\"
+.\" This file may be copied under the conditions described
+.\" in the GNU GENERAL PUBLIC LICENSE, version 2
+.\" that can be found on the website of the free software
+.\" foundation.
+.\"
+.TH HTTPING 1 2016-09 "httping"
+.SH NAME
+httping - meten van de latency en doorvoorsnelheid van een http server
+.SH SAMENVATTING
+.BI "httping [" opties "]
+.sp
+een aantal opties:
+.BI "[\-g URL] [\-h systeem naam] [\-p port nummer] [\-x proxy systeem naam:port] [\-c aantal] [\-i interval] [\-t duur limiet] [\-s] [\-K] [\-Y]
+.SH BESCHRIJVING
+The program
+Het programma
+.B httping
+meet de latency van een http server. Sinds versie 1.0.6 kan ook de dooorvoorsnelheid gemeten worden.
+.PP
+.SH OPTIES
+.TP
+.B "\-5"
+De geselecteerde server is een SOCKS5 server.
+.TP
+.B "\-6"
+Schakel IPv6 mode in. Standaard instelling is IPv4.
+.TP
+.B "\-a"
+Hoorbare ping
+.TP
+.B "\-b"
+Gebruik deze optie samen met \-G. HTTPing zal dan de doorvoorsnelheid (in kB/s) tonen.
+.TP
+.B "\-B"
+Gebruik deze optie samen met \-G. HTTPing zal dan de doorvoorsnelheid (in kB/s) tonen. HTTPing zal echter vragen aan de webserver of deze de data comprimeerd.
+.TP
+.B "\-c aantal"
+Hoevaak te pingen.
+.TP
+.B "\-D"
+Teken geen grafieken (in ncurses (\-K) mode).
+.TP
+.B "\-e str"
+Als de status-code anders is dan die ingesteld is met \-o, dan zal 'str' getoond worden.
+.TP
+.B "\-E"
+Haal de proxy instellingen uit omgevings variabelen.
+.TP
+.B "\-F"
+Probeer verbindingen met "TFO (TCP Fast open)" op te zetten. Dit werkt alleen met Linux kernel 3.7 of recenter.
+.TP
+.B "\-f"
+Ping zo snel als mogelijk achter elkaar.
+.TP
+.B "\-G"
+Doe een GET-verzoek in plaats van een HEAD-verzoek. Daarmee wordt ook de pagina-inhoud opgehaald.
+.TP
+.B "\-g URL"
+Kies welke URL gepinged moet worden. Bijvoorbeeld: http://www.microsoft.com/
+.TP
+.B "\-h systeem naam"
+In plaats van een URL kan men ook alleen een systeem naam opgeven.
+.TP
+.B "\-I str"
+Welke "UserAgent" te sturen naar de webserver.
+.TP
+.B "\-i interval"
+Hoeveel seconden (of delen daarvan) te wachten tussen het verzenden van iedere ping.
+.TP
+.B "\-K"
+Gebruik de ncurses gebruikers interface.
+.TP
+.B "\-L x"
+In combinatie met \-G zet dit een limiet op hoeveel data er binnengehaald wordt.
+.TP
+.B "\-l"
+Maak een SSL verbinding. Dit vereist een https-URL.
+.TP
+.B "\-m"
+Geef output die makkelijker met een script te bewerken is.
+.TP
+.B "\-N x"
+Nagios-mode 1: geef 1 terug als de gemiddel reaktie snelheid >= "warn" en 2 als die snelheid >= "crit", anders geef 0 terug. Nagios mode 2: geef 0 terug als alles goed ging, anders 'x'.
+.TP
+.B "\-n warn,crit"
+Schakelt HTTPing naar Nagios-plugin mode 1. Geef afsluit code 1 als de gemiddelde response tijd groter is dan 'warn', geef 2 terug als die tijd groter is dan 'crit'. Anders 0.
+.TP
+.B "\-o x,x,..."
+Selecteer de HTTP status-codes die als 'ok' beschouwd worden.
+.TP
+.B "\-p portnumber"
+Gebruik dit on combinatie met h. Het zet het port-nummer om te pingen.
+.TP
+.B "\-Q"
+Gebruik een blijvende verbinding, dat wil zeggen hergebruiken dezelfde TCP-verbinding voor meerdere HTTP-verzoeken. Meestal mogelijk wanneer 'Connection: Keep-Alive' is verzonden door de server. Als het bestemmingssysteem de verbinding verbroken heeft, dan zal HTTPing een \"C\" toevoegen aan de uitvoer.
+.TP
+.B "\-q"
+Geef geen uitvoer, alleen een teruggave code.
+.TP
+.B "\-R str"
+Welke "Referer" te zenden naar de webserver.
+.TP
+.B "\-r"
+Eenmalig systeemnaam vertalen (dit is zinvol bij het pingen van een roterende DNS, bovendien haalt het de eerste vertaling uit de ping lus zodat de 1e ping niet een bovengemiddelde tijd duurt).
+.TP
+.B "\-S"
+Toon alle individuele componenten (verbinden, zenden, etc) van de gemeten tijden.
+.TP
+.B "\-s"
+Toon de HTTP statuscodes.
+.TP
+.B "\-T x"
+Lees de toegangscode voor website authenticatie uit bestand 'x'.
+.TP
+.B "\-t timeout"
+Hoelang te wachten op een reactie van de webserver.
+.TP
+.B "\-U"
+Gebruik authenticatie bij toegang tot de website. Combineer dit met \-P of \-T.
+.TP
+.B "\-v"
+Toon meer details.
+.TP
+.B "\-W"
+Stop HTTPing niet als het opzoeken van de server naam niet lukt.
+.TP
+.B "\-X"
+Gebruik deze in combinatie met \-G. Toon hoeveel data er ontvangen werd.
+.TP
+.B "\-x proxyhost[:port]
+Gebruik een proxy server om een verbinding op te zetten.
+.TP
+.B "\-Y"
+Gebruik kleuren.
+.TP
+.B "\-z"
+Toon de vingerafdruk van de X.509 certificaten bij het opzetten van een SSL verbinding.
+.TP
+.B "\-\-abbreviate"
+Kort waardes af wanneer ze groter zijn dan 1000/1000000/etc.
+.TP
+.B "\-\-adaptive-interval" or "\-\-ai"
+Zorg ervoor dat pings steeds met dezelfde interval uitgevoerd worden, relatief tot het start tijdstip. deze instelling wordt automatisch aangezet in "ncurses"\-mode.
+.TP
+.B "\-\-aggregates x[,y[,z[,etc.]]]"
+Toon cumulatief de waardes van x[/y[/etc]] seconden.
+.TP
+.B "\-\-divert\-connect x"
+Gebruik niet de systeemnaam uit de URL om naar te verbinden. Verbind naar 'x'.
+.TP
+.B "\-\-draw-phase"
+Toon fase diagram.
+.TP
+.B "\-\-graph\-limit x"
+Bij het bepalen van de grafiek-bandbreedte: negeer waardes hoger dan x.
+.TP
+.B "\-\-header x"
+Voeg een extra verzoek-regel toe.
+.TP
+.B "\-\-keep\-cookies"
+Als de HTTP server cookies geeft, zend die dan mee terug bij volgende pings.
+.TP
+.B "\-\-max\-mtu x"
+Welke MTU te gebruiken. Kan niet groter zijn dan de MTU van de netwerk adapter.
+.TP
+.B "\-\-no\-host\-header"
+Voeg niet een "Host:"\-regel toe aan het verzoek.
+.TP
+.B "\-\-no\-tcp\-nodelay"
+Zet het Naggle-algorithme niet uit.
+.TP
+.B "\-\-priority x"
+Geef packets een bepaalde prioriteit.
+.TP
+.B "\-\-tos x"
+Configureer de TOS.
+.TP
+.B "\-\-proxy\-user x"
+Gebruikersnaam voor proxy authenticatie.
+.TP
+.B "\-\-proxy\-password x"
+Toegangscode voor proxy authenticatie.
+.TP
+.B "\-\-proxy\-password-file x"
+Lees toegangscode voor proxy authenticatie uit bestand 'x'.
+.TP
+.B "\-\-recv-buffer x"
+Configureer de grootte van de ontvangst buffer.
+.TP
+.B "\-\-slow\-log x"
+Als een ping-tijd meer dan x is, toon het resultaat dan in het middelste venster.
+.TP
+.B "\-\-threshold\-red x"
+Toon metingen in rood als de gemeten waarde meer dan x is.
+.TP
+.B "\-\-threshold\-yellow x"
+Toon metingen in geel als de gemeten waarde meer dan x is.
+.TP
+.B "\-\-threshold\-show x"
+Toon metingen alleen als ze hoger dan x zijn.
+.TP
+.B "\-\-timestamp" or "\-\-ts"
+Voeg een een tijdstempel toe aan de uitvoer. Gebruik \-v om ook een datum te zien en \-vv om ook microseconden te zien.
+.TP
+.B "\-\-tx-buffer x"
+Configureer de grootte van de zend-buffer.
+.TP
+.B "\-V"
+Toon versie informatie.
+
+.SH UITVOER
+In de \-S mode zal iets als "tijd=0.08+24.09+23.17+15.64+0.02=62.98 ms" getoond worden. De eerste waarde is hoe lang het duurde om de systeem naam te vertalen, de 2e waarde hoe lang het duurde om te verbinden, de 3e waarde geeft aan hoe lang het duurde om het verzoek te verzenden en de 4e waarde is hoelang het duurde voordat de http-server een antwoord formuleerde en terugzond. de 5e waarde geeft aan hoelang het duurde om de socket te sluiten.
+
+.SH GRAFIEK
+De grafiek in ncurses mode gebruikt een aantal kleuren. Groen: de waarde is minder dan de ondergrens. Rood: de waarde is hoger dan de bovengrens. Blauw: de waarde is gelimiteerd door '\-\-graph\-limit'. Cyaan: er is geen meetwaarde.
+
+.SH TOETSEN
+Druk <CTRL> + <c> om het programma af te breken. Er zal dan een samenvatting getoond worden.
+In ncurses mode: <CTRL> + <l> ververst het scherm, H stopt (en hervat) de grafieken en ook q zal het programma stoppen.
+
+.SH VOORBEELDEN
+.TP
+.B "httping \-g http://localhost/"
+Ping de HTTP server op URL http://localhost/
+.TP
+.B "httping \-h localhost \-p 1000"
+Ping de HTTP server op systeem 'localhost' en port nummer 1000.
+.TP
+
+.SH BUGS
+Geen.
+
+.SH "ZIE OOK"
+.BR http://www.vanheusden.com/httping/
+
+.SH NOTITIES
+Deze man-page beschrijft
+.B httping
+versie 2.3: andere versies kunnen iets of wat verschillen.
+Stuur a.u.b. correcties, toevingen en foutraporten naar mail@vanheusden.com
+Wanneer u een donatie wilt doen, dan kunt u Bitcoins sturen naar: 1N5Sn4jny4xVwTwSYLnf7WnFQEGoVRmTQF

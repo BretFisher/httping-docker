@@ -1,0 +1,248 @@
+.\" Copyright Folkert van Heusden, 2003-2016
+.\"
+.\" This file may be copied under the conditions described
+.\" in the GNU GENERAL PUBLIC LICENSE, version 2
+.\" that can be found on the website of the free software
+.\" foundation.
+.\"
+.TH HTTPING 1 2016-09 "httping"
+.SH NAME
+httping - measure the latency and throughput of a webserver
+.SH SYNOPSIS
+.BI "httping [" options "]
+.sp
+options:
+.BI "[\-g url] [\-h hostname] [\-p portnumber] [\-x proxyhost:port] [\-c count] [\-i interval] [\-t timeout] [\-s] [\-G] [\-b] [\-L xferlimit] [\-X] [\-l] [\-z] [\-f] [\-m] [\-o rc,...] [\-e string]"
+.BI "[\-I useragent string] [\-R referer string] [\-r] [\-n warn,crit] [\-N mode] [\-q] [\-V]"
+.SH DESCRIPTION
+The program
+.B httping
+lets you measure the latency of a webserver. Since version 1.0.6 also the throughput can be measured.
+.PP
+.SH OPTIONS
+.TP
+.B "\-5"
+The proxy server selected is a SOCKS5 server.
+.TP
+.B "\-6"
+Enable IPv6 mode. Default is IPv4.
+.TP
+.B "\-a"
+Audible ping
+.TP
+.B "\-b"
+Use this switch together with '\-G'. When this option is used, the transferspeed (in KB/s) is shown.
+.TP
+.B "\-B"
+Use this switch together with '\-G'. Ask the HTTP server to compress the returned data: this will reduce the influence of the bandwidth of your connection while increasing the influence of the processorpower of the HTTP server.
+.TP
+.B "\-c count"
+How many probes to send before exiting.
+.TP
+.B "\-D"
+Do not draw graphs in ncurses mode (\-K).
+.TP
+.B "\-e str"
+When the status-code differs from the ones selected with '\-o', the given string is displayed.
+.TP
+.B "\-E"
+Retrieve proxy settings from environment variables ('http_proxy' and 'https_proxy').
+.TP
+.B "\-F"
+Attempt TCP Fast Open while trying to connect to a server (for Linux, version 3.7 onwards of the kernel)   
+.TP
+.B "\-f"
+Flood ping: do not sit idle between each ping but ping as fast as the computer and network allow you to.
+.TP
+.B "\-G"
+Do a GET request instead of a HEAD request: this means that also the complete page/file must be transferred. Note that in this case you're no longer measuring the latency!
+.TP
+.B "\-g url"
+This selects the url to probe. E.g.: http://localhost/
+.TP
+.B "\-h hostname"
+Instead of '\-g' one can also set a hostname to probe with \-h: \-h localhost
+.TP
+.B "\-I str"
+UserAgent-string to send to the webserver (instead of 'HTTPing <version>').
+.TP
+.B "\-i interval"
+How many seconds to sleep between every probe sent.
+.TP
+.B "\-K"
+Enable ncurses user interface.
+.TP
+.B "\-L x"
+Use this switch together with '\-G'. Limit the amount of data transferred to 'x'. Note that this only affects the content of the page/file and not the headerdata.
+.TP
+.B "\-l"
+Connect using SSL: for this to work you need to give a 'https'-url or a 443 portnumber.
+.TP
+.B "\-m"
+Show machine readable output (also check '\-o' and '\-e').
+.TP
+.B "\-N x"
+Switches HTTPing to Nagios-plugin mode 2: return 0 when everything is fine, 'x' when anything fails. E.g.: 1 => Nagios warning state, 2 => Nagios critical state.
+.TP
+.B "\-n warn,crit"
+Switches HTTPing to Nagios-plugin mode 1: return exitcode '1' when the average response time is bigger then 'warn', return exitcode '2' when the the average response time is bigger then 'crit'. In all other cases return exitcode '0'.
+.TP
+.B "\-o x,x,..."
+This selects the HTTP status-codes which are regarded as an OK-state (only with '\-m').
+.TP
+.B "\-p portnumber"
+\-p can be used together with \-h. \-p selects the portnumber to probe.
+.TP
+.B "\-q"
+Be quiet, only return an exit-code.
+.TP
+.B "\-R str"
+Referer-string to send to the webserver.
+.TP
+.B "\-Q"
+Use a persistent connection, i.e. reuse the same TCP connection for multiple HTTP requests. Usually possible when 'Connection: Keep-Alive' is sent by server. Adds a 'C' to the output if httping had to reconnect.
+.TP
+.B "\-r"
+Only resolve the hostname once: this takes the resolving out of the loop so that the latency of the DNS is not measured. Also useful when you want to measure only 1 webserver while the DNS returns a different ip-address for each resolve ('roundrobin').
+.TP
+.B "\-S"
+Split measured latency in time to connect and time to exchange a request with the HTTP server.
+.TP
+.B "\-s"
+When a successfull transaction was done, show the HTTP statuscode (200, 404, etc.).
+.TP
+.B "\-T x"
+Read the password for website authentication from file 'x' (instead of entering it on the command line).
+.TP
+.B "\-t timeout"
+How long to wait for answer from the other side.
+.TP
+.B "\-U"
+Enable authentication against website. Set username with \-U, set password with \-P (or \-T to read the password from a file).
+.TP
+.B "\-v"
+Increase verbosity mode. To show standard deviation and dates in output.
+.TP
+.B "\-W"
+Do not abort program if resolving fails.
+.TP
+.B "\-X"
+Use this switch together with '\-G'. For each "ping" show the amount of data transferred (excluding the headers).
+.TP
+.B "\-x proxyhost[:port]
+Probe using a proxyserver. Note that you're also measuring the latency of the proxyserver!
+.TP
+.B "\-Y"
+Enable colors
+.TP
+.B "\-z"
+When connecting using SSL, display the fingerprint of the X509 certificate(s) of the peer.
+.TP
+.B "\-\-abbreviate"
+Abbreviate values bigger than thousand, million, billion, etc.
+.TP
+.B "\-\-adaptive-interval" or "\-\-ai"
+(Try to) ping on the same interval. E.g. if interval is set to 1.0 seconds and ping a ping t[n] occurs at 500s with duration 250ms, then the next ping (t[n+1]) will happen at 501 seconds and not at 501.25 seconds. Of course when the ping duration is > bigger than the interval, a ping will be "skipped" (not literally: the sequence number will continue) and t[n+1] will then be e.g. 502s instead of the expected 501s. This is useful for example in the ncurses output mode where an fft is calculated over the ping times.
+.TP
+.B "\-\-aggregates x[,y[,z[,etc.]]]"
+Show aggregates every x[/y[/z[/etc]]] seconds.
+.TP
+.B "\-\-divert\-connect x"
+Ignore the hostname in the URL and connect to 'x' instead. The given URL will be requested at 'x'.
+.TP
+.B "\-\-draw-phase"
+Not only draw the magnitude of the fourier transform, draw the phase as well.
+.TP
+.B "\-\-graph\-limit x"
+If values measured are bigger than x, then they're limitted to x.
+.TP
+.B "\-\-header x"
+Add an additional request-header 'x'.
+.TP
+.B "\-\-keep\-cookies"
+When the server sends a cookie, it will be returned in the next request.
+.TP
+.B "\-\-max\-mtu x"
+Maximum MTU to use. Cannot be larger than network interface MTU.
+.TP
+.B "\-\-no\-host\-header"
+Do not put a "Host:"\-header in the request header.
+.TP
+.B "\-\-no\-tcp\-nodelay"
+Do not disable "tcp delay" (Naggle).
+.TP
+.B "\-\-priority x"
+Set priority of packets.
+.TP
+.B "\-\-tos x"
+Set type of service.
+.TP
+.B "\-\-proxy\-user x"
+Use username 'x' to authenticate against proxy (http/socks5) server (optional).
+.TP
+.B "\-\-proxy\-password x"
+Use password 'x' to authenticate against proxy (http/socks5) server (optional).
+.TP
+.B "\-\-proxy\-password-file x"
+Read password from file 'x' to authenticate against proxy (http/socks5) server (optional).
+.TP
+.B "\-\-recv-buffer x"
+Set the size of the receive buffer (in bytes).
+.TP
+.B "\-\-slow\-log x"
+When the duration is x or more, show ping line in the slow log window (the middle window).
+.TP
+.B "\-\-threshold\-red x"
+If the measured threshold is higher than x (and \-Y is given), then the shown value is colored red. If you also use \-\-threshold\-yellow, then this value must be bigger.
+.TP
+.B "\-\-threshold\-yellow x"
+If the measured threshold is higher than x (and \-Y is given), then the shown value is colored yellow.
+.TP
+.B "\-\-threshold\-show x"
+If the measured threshold is higher than x, then the result is shown (default is show always). The value x is in ms.
+.TP
+.B "\-\-timestamp" or "\-\-ts"
+Put a timestamp before the result-lines. Use \-v to also show a date.
+.TP
+.B "\-\-tx-buffer x"
+Set the size of the transmit buffer (in bytes).
+.TP
+.B "\-V"
+Show the version and exit.
+
+.SH OUTPUT
+In split mode (\-S) something like "time=0.08+24.09+23.17+15.64+0.02=62.98 ms" is shown. The first value is the time it took to resolve the hostname (or 'n/a' if it did not resolve in this iteration, e.g. in "resolve once" (\-r) mode), then the time it took to connect (or \-1 for example in persistent connection (\-Q, HTTP v1.1), after that the time it took to put the request on the wire, then the time it took for the HTTP server to process the request and send it back and lastly the time it took to close the connection.
+
+.SH GRAPH
+The graph in the ncurses uses colors to encode a meaning. Green: value is less than 1 block. Red: the value did not fit in the graph. Blue: the value was limitted by \-\-graph\-limit. Cyan: no measurement for that point in time.
+
+.SH KEYS
+Press <CTRL> + <c> to exit the program. It will display a summary of what was measured.
+In the ncurses gui, press <CTRL> + <l> to forcibly redraw the screen. Press 'H' to halt the graphs (and again to continue). Press 'q' to stop the program (<CTRL> + <c> will work too).
+
+.SH EXAMPLES
+.TP
+.B "httping \-g http://localhost/"
+Ping the webserver on host 'localhost'.
+.TP
+.B "httping \-h localhost \-p 1000"
+Ping the webserver on host 'localhost' and portnumber 1000.
+.TP
+.B "httping \-l \-g https://localhost/"
+Ping the webserver on host 'localhost' using an SSL connection.
+.TP
+.B "httping \-g http://localhost/ -U username -P password"
+Ping the webserver on host 'localhost' using the Basic HTTP Authentication.
+.SH BUGS
+None. This program is totally bug-free.
+
+.SH "SEE ALSO"
+.BR http://www.vanheusden.com/httping/
+
+.SH NOTES
+This page describes
+.B httping
+as found in the httping-2.3 package; other versions may differ slightly.
+Please mail corrections and additions to mail@vanheusden.com.
+Report bugs in the program to mail@vanheusden.com.
+Please consider sending bitcoins to 1N5Sn4jny4xVwTwSYLnf7WnFQEGoVRmTQF
