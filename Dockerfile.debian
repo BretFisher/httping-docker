@@ -6,7 +6,7 @@ LABEL maintainer="Bret Fisher <bret@bretfisher.com>"
 
 RUN set -x \
 	&& apt-get update \
-	&& apt-get install -y \
+	&& apt-get install -y --no-install-recommends \
         build-essential \
         gcc \
         make \
@@ -14,7 +14,7 @@ RUN set -x \
         gettext \
         git \
         libncurses-dev \
-        # libncursesw-dev \
+        libncursesw-dev \
         libssl-dev \
         libfftw3-dev \
         libfftw3-bin \
@@ -37,7 +37,7 @@ FROM debian:bullseye-slim as release
 
 RUN set -x \
     && apt-get update \
-    && apt-get install -y \
+    && apt-get install -y --no-install-recommends \
         ca-certificates \
         curl \
         libfftw3-bin \

@@ -1,6 +1,6 @@
 FROM alpine as build
 
-RUN apk add \
+RUN apk add --no-cache \
     make \
     build-base \ 
     openssl-dev \

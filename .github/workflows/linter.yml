@@ -52,5 +52,7 @@ jobs:
           VALIDATE_ALL_CODEBASE: false
           VALIDATE_CPP: false
           VALIDATE_SHELL_SHFMT: false
+          VALIDATE_BASH: false
+          VALIDATE_JSCPD: false
           DEFAULT_BRANCH: main
           GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
