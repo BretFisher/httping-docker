@@ -5,8 +5,7 @@
 
 This container image is stored on docker hub: [bretfisher/httping](https://hub.docker.com/r/bretfisher/httping/)
 
-It builds from source repo at [github.com/flok99/httping](https://github.com/flok99/httping) including all optional features
-like the ncurses GUI `-K`, TCP fast open `-F`, and SSL `-l`.
+NOTE: This is based on the original httping project, which has since been removed from GitHub. I maintain a copy of the 2.5 version in the `source` directory of this repo.
 
 ## Basic example at docker CLI
 
