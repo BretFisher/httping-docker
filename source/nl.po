@@ -1,0 +1,1229 @@
+# Dutch translations for HTTPing package.
+# Copyright (C) 2016 folkert van heusden
+# This file is distributed under the same license as the HTTPing package.
+# folkert van heusden <mail@vanheusden.com>, 2016.
+# Translated by Joris Zwart - http://joriszwart.nl/
+#
+msgid ""
+msgstr ""
+"Project-Id-Version: HTTPing\n"
+"Report-Msgid-Bugs-To: \n"
+"POT-Creation-Date: 2015-05-04 15:29+0200\n"
+"PO-Revision-Date: 2015-05-04 18:41+0100\n"
+"Last-Translator: Joris Zwart <hallo@joriszwart.nl>\n"
+"Language-Team: Dutch\n"
+"Language: nl\n"
+"MIME-Version: 1.0\n"
+"Content-Type: text/plain; charset=UTF-8\n"
+"Content-Transfer-Encoding: 8bit\n"
+"Plural-Forms: nplurals=2; plural=(n != 1);\n"
+"X-Poedit-Language: Dutch\n"
+"X-Poedit-Country: NETHERLANDS\n"
+
+#: error.c:23
+#, c-format
+msgid ""
+"\n"
+"\n"
+"errno=%d which means %s (if applicable)\n"
+msgstr ""
+"\n"
+"\n"
+"errno=%d en dat betekent: %s (indien van toepassing)\n"
+
+#: error.c:39
+#, c-format
+msgid "Error message '%s' truncated"
+msgstr "De foutmelding '%s' past niet in de buffer."
+
+#: fft.c:21
+msgid "failed allocating memory for fft (1)"
+msgstr "Geheugentoewijzingsprobleem voor 'fft (1)'."
+
+#: fft.c:25
+msgid "failed allocating memory for fft (2)"
+msgstr "Geheugentoewijzingsprobleem voor 'fft (2)'."
+
+#: fft.c:30
+msgid "failed calculating plan for fft"
+msgstr "Probleem bij het voorbereiden van de FFT berekening."
+
+#: help.c:77
+#, c-format
+msgid "HTTPing v"
+msgstr "HTTPing versie "
+
+msgid "adds an extra request-header"
+msgstr "voeg een extra verzoek-regel toe"
+
+#: help.c:79
+#, c-format
+msgid " * SSL support included (-l)\n"
+msgstr " * Ondersteuning voor SSL (-l)\n"
+
+#: help.c:84
+#, c-format
+msgid " * ncurses interface with FFT included (-K)\n"
+msgstr " * ncurses gebruikersinterface met fourier transformatie berekening (-K)\n"
+
+#: help.c:86
+#, c-format
+msgid " * ncurses interface included (-K)\n"
+msgstr " * ncurses gebruikersinterface (-K)\n"
+
+#: help.c:91
+#, c-format
+msgid " * TFO (TCP fast open) support included (-F)\n"
+msgstr " * Ondersteuning voor 'TFO (TCP fast open)' (-F)\n"
+
+#: help.c:93
+#: help.c:293
+#, c-format
+msgid "\n"
+msgstr "\n"
+
+#: help.c:176
+#, c-format
+msgid " *** where to connect to ***\n"
+msgstr " *** adresspecificaties ***\n"
+
+#: help.c:177
+msgid "URL to ping (e.g. -g http://localhost/)"
+msgstr "URL om te pingen (bijvoorbeeld -g http://localhost/)"
+
+#: help.c:178
+msgid "hostname to ping (e.g. localhost) - use either -g or -h"
+msgstr "Systeemnaam om te pingen (bijvoorbeeld localhost). -g en -h kunnen niet gecombineerd worden"
+
+#: help.c:179
+msgid "portnumber (e.g. 80) - use with -h"
+msgstr "poortnummer (bijv. 80), voor gebruik in combinatie met -h"
+
+#: help.c:180
+msgid "use IPv6 when resolving/connecting"
+msgstr "gebruik IPv6 bij het omzetten van een systeemnaam en bij het maken van een verbinding"
+
+#: help.c:182
+msgid "connect using SSL. pinging an https URL automatically enables this setting"
+msgstr "gebruik SSL encryptie. Wanneer men een https-URL kiest, dan zal deze optie automatisch ingeschakeld worden."
+
+#: help.c:187
+#, c-format
+msgid " *** proxy settings ***\n"
+msgstr " *** proxy instellingen ***\n"
+
+#: help.c:188
+msgid "x should be \"host:port\" which are the network settings of the http/https proxy server. ipv6 ip-address should be \"[ip:address]:port\""
+msgstr "x moet zijn \"host:port\", dat zijn de parameters van de http/https proxyserver. ipv6 ip-adressen moeten opgebouwd zijn als volgt: \"[ip:adres]:port\""
+
+#: help.c:189
+msgid "fetch proxy settings from environment variables"
+msgstr "haal de proxy-instellingen uit de omgevingsvariabelen"
+
+#: help.c:190
+msgid "username for authentication against proxy"
+msgstr "gebruikersnaam voor proxy-authenticatie"
+
+#: help.c:191
+msgid "password for authentication against proxy"
+msgstr "toegangscode voor proxy-authenticatie"
+
+#: help.c:192
+msgid "read password for proxy authentication from file x"
+msgstr "lees toegangscode voor proxy-authenticatie uit bestand x"
+
+#: help.c:193
+msgid "proxy is a socks5 server"
+msgstr "de proxy is een socks5 systeem"
+
+#: help.c:194
+msgid "adds \"&x=[random value]\" to the request URL"
+msgstr "voeg een \"&x=[willekeurig getal]\" aan de geselecteerde URL"
+
+#: help.c:198
+#, c-format
+msgid " *** timing settings ***\n"
+msgstr " *** tijdsinstellingen ***\n"
+
+#: help.c:199
+msgid "how many times to ping"
+msgstr "hoe vaak te pingen"
+
+#: help.c:200
+msgid "delay between each ping"
+msgstr "pauze tussen iedere ping"
+
+#: help.c:201
+msgid "timeout (default: 30s)"
+msgstr "hoelang te wachten op een server die niet reageert (standaard waarde: 30 seconden)"
+
+#: help.c:202
+msgid "execute pings at multiples of interval relative to start, automatically enabled in ncurses output mode"
+msgstr "zorg ervoor dat pings steeds met dezelfde interval uitgevoerd worden, relatief tot het start tijdstip. deze instelling wordt automatisch aangezet in \"ncurses\"-mode"
+
+#: help.c:203
+msgid "flood connect (no delays)"
+msgstr "geen vertraging tussen iedere ping"
+
+#: help.c:207
+#, c-format
+msgid " *** HTTP settings ***\n"
+msgstr " *** HTTP-instellingen ***\n"
+
+#: help.c:208
+msgid "ask any proxies on the way not to cache the requests"
+msgstr "vraag aan de proxy-sysstemen in de route tussen het lokale systeem en het bestemmingssysteem om de verzoeken niet te cachen"
+
+#: help.c:209
+msgid "connect to a different host than in the URL given"
+msgstr "verbind en zend de URL-verzoeken naar een ander systeem dan wat in de URL is opgegeven"
+
+#: help.c:210
+msgid "return the cookies given by the HTTP server in the following request(s)"
+msgstr "als de HTTP-server cookies geeft, zend die dan mee terug bij volgende pings"
+
+#: help.c:211
+msgid "do not add \"Host:\"-line to the request headers"
+msgstr "voeg geen \"Host:\"-regel in het verbindingsverzoek"
+
+#: help.c:212
+msgid "use a persistent connection, i.e. reuse the same TCP connection for multiple HTTP requests. usually possible when 'Connection: Keep-Alive' is sent by server. adds a 'C' to the output if httping had to reconnect"
+msgstr "gebruik een blijvende verbinding, dat wil zeggen hergebruiken dezelfde TCP-verbinding voor meerdere HTTP-verzoeken. meestal mogelijk wanneer 'Connection: Keep-Alive' is verzonden door de server. als het bestemmingssysteem de verbinding verbroken heeft, dan zal HTTPing een \"C\" toevoegen aan de uitvoer"
+
+#: help.c:213
+msgid "use 'x' for the UserAgent header"
+msgstr "gebruik 'x' in de UserAgent verzoekinstellingen"
+
+#: help.c:214
+msgid "use 'x' for the Referer header"
+msgstr "gebruik 'x' in de Referer verzoekinstellingen"
+
+#: help.c:218
+#, c-format
+msgid " *** networking settings ***\n"
+msgstr " *** netwerk instellingen ***\n"
+
+#: help.c:219
+msgid "limit the MTU size"
+msgstr "beperkt de MTU omvang"
+
+#: help.c:220
+msgid "do not disable Naggle"
+msgstr "zet het Naggle-algorithme niet uit"
+
+#: help.c:221
+msgid "receive buffer size"
+msgstr "ontvangst buffer omvang"
+
+#: help.c:222
+msgid "transmit buffer size"
+msgstr "verzend buffer omvang"
+
+#: help.c:223
+msgid "resolve hostname only once (useful when pinging roundrobin DNS: also takes the first DNS lookup out of the loop so that the first measurement is also correct)"
+msgstr "eenmalig systeemnaam vertalen (dit is zinvol bij het pingen van een roterende DNS, bovendien haalt het de eerste vertaling uit de ping lus zodat de 1e ping niet een bovengemiddelde tijd duurt)"
+
+#: help.c:224
+msgid "do not abort the program if resolving failed: keep retrying"
+msgstr "breek het programma niet af als de systeemnaamvertaling mislukt is"
+
+#: help.c:225
+msgid "bind to an ip-address (and thus interface) with an optional port"
+msgstr "stuur verzoeken via een specifieke netwerk adapter, eventueel zelfs vanaf een specifieke port"
+
+#: help.c:227
+msgid "\"TCP fast open\" (TFO), reduces the latency of TCP connects"
+msgstr "\"TCP fast open\" (TFO), dit verlaagt de latency van opvolgende TCP verbindingen"
+
+#: help.c:229
+msgid "set priority of packets"
+msgstr "zet prioriteit van pakketten"
+
+#: help.c:230
+msgid "set TOS (type of service)"
+msgstr "zet de TOS (diensttype)"
+
+#: help.c:234
+#, c-format
+msgid " *** HTTP authentication ***\n"
+msgstr " *** HTTP authenticatie ***\n"
+
+#: help.c:235
+msgid "activate (\"basic\") authentication"
+msgstr "activeer (\"basic\")-authenticatie"
+
+#: help.c:236
+msgid "username for authentication"
+msgstr "gebruikersnaam voor authenticatie"
+
+#: help.c:237
+msgid "password for authentication"
+msgstr "toegangscode voor authenticatie"
+
+#: help.c:238
+msgid "read the password fom the file 'x' (replacement for -P)"
+msgstr "lees de toegangscode uit bestand 'x'"
+
+#: help.c:242
+#, c-format
+msgid " *** output settings ***\n"
+msgstr " *** uitvoerinstellingen ***\n"
+
+#: help.c:243
+msgid "show statuscodes"
+msgstr "toon statuscodes"
+
+#: help.c:244
+msgid "split measured time in its individual components (resolve, connect, send, etc."
+msgstr "toon alle individuele componenten (verbinden, zenden, etc) van de gemeten tijden"
+
+#: help.c:245
+msgid "from what ping value to show the value in red (must be bigger than yellow), only in color mode (-Y)"
+msgstr "toon de waardes in rood vanaf welke gemeten tijden"
+
+#: help.c:246
+msgid "from what ping value to show the value in yellow"
+msgstr "toon de waardes in 't geel vanaf welke gemeten tijden"
+
+#: help.c:247
+msgid "from what ping value to show the results"
+msgstr "filter alle metingen die beneden deze waarde vallen"
+
+#: help.c:248
+msgid "put a timestamp before the measured values, use -v to include the date and -vv to show in microseconds"
+msgstr "toon een tijdstempel voor iedere gemeten waarde. gebruik -v om ook de datum te zien en -vv om ook microseconden te zien"
+
+#: help.c:249
+msgid "show an aggregate each x[/y[/z[/etc]]] seconds"
+msgstr "toon cumulatief de waardes van x[/y[/etc]] seconden"
+
+#: help.c:251
+msgid "show fingerprint (SSL)"
+msgstr "toon een vingerafdruk voor de SSL-verbinding"
+
+#: help.c:253
+msgid "verbose mode"
+msgstr "toon meer details"
+
+#: help.c:257
+#, c-format
+msgid " *** \"GET\" (instead of HTTP \"HEAD\") settings ***\n"
+msgstr " *** \"GET\" (in plaats van HTTP \"HEAD\") instellingen ***\n"
+
+#: help.c:258
+msgid "do a GET request instead of HEAD (read the contents of the page as well)"
+msgstr "doe een GET verzoek in plaats van een HEAD verzoek en haal ook de inhoud van een pagina op"
+
+#: help.c:259
+msgid "show transfer speed in KB/s (use with -G)"
+msgstr "toon de verzendsnelheid in KB/s (gebruik in combinatie met -G)"
+
+#: help.c:260
+msgid "like -b but use compression if available"
+msgstr "zoals -b maar gebruik compressie als het HTTP systeem dit ondersteunt"
+
+#: help.c:261
+msgid "limit the amount of data transferred (for -b) to 'x' (in bytes)"
+msgstr "limiteer de hoeveelheid verzonden data (ism -b) tot 'x' bytes"
+
+#: help.c:262
+msgid "show the number of KB transferred (for -b)"
+msgstr "toon de totaal verzonden hoeveelheid data (in KB, ism -b)"
+
+#: help.c:266
+#, c-format
+msgid " *** output mode settings ***\n"
+msgstr " *** uitvoer modeinstellingen ***\n"
+
+#: help.c:267
+msgid "quiet, only returncode"
+msgstr "toon niets, geef alleen een resultaatwaarde terug"
+
+#: help.c:268
+msgid "give machine parseable output (see also -o and -e)"
+msgstr "toon resultaat in computervriendelijkformaat (zie ook -o en -e)"
+
+#: help.c:269
+msgid "json output, cannot be combined with -m"
+msgstr "json uitvoer, kan niet met -m gecombineerd worden"
+
+#: help.c:270
+msgid "what http results codes indicate 'ok' comma separated WITHOUT spaces inbetween default is 200, use with -e"
+msgstr "welke HTTP statuscodes als 'ok' te beschouwen. dit moet een met komma gescheiden lijst (geen spaties) zijn. de standaard waarde is 200. gebruik deze instelling ism -e"
+
+#: help.c:271
+msgid "string to display when http result code doesn't match"
+msgstr "wat te laten zien als de HTTP statuscodes niet overeenkomen"
+
+#: help.c:272
+msgid "Nagios-mode: return 1 when avg. response time >= warn, 2 if >= crit, otherwhise return 0"
+msgstr "Nagios-mode 1: geef 1 terug als de gemiddelde reactiesnelheid >= \"warn\" en 2 als die snelheid >= \"crit\", anders geef 0 terug"
+
+#: help.c:273
+msgid "Nagios mode 2: return 0 when all fine, 'x' when anything failes"
+msgstr "Nagios mode 2: geef 0 terug als alles goed ging, anders 'x'"
+
+#: help.c:274
+msgid "add a cookie to the request"
+msgstr "voeg een cookie toe aan het HTTP-verzoek"
+
+#: help.c:275
+msgid "add colors"
+msgstr "gebruik kleuren"
+
+#: help.c:276
+msgid "audible ping"
+msgstr "hoorbare piep"
+
+#: help.c:281
+#, c-format
+msgid " *** GUI/ncurses mode settings ***\n"
+msgstr " *** grafische interface/ncurses mode instellingen ***\n"
+
+#: help.c:282
+msgid "ncurses/GUI mode"
+msgstr "ncurses/GUI mode"
+
+#: help.c:284
+msgid "draw phase (fourier transform) in gui"
+msgstr "toon fasediagram"
+
+#: help.c:286
+msgid "when the duration is x or more, show ping line in the slow log window (the middle window)"
+msgstr "als de tijdmetingen groter zijn dan x, toon dan het resultaat in het middelste venster"
+
+#: help.c:287
+msgid "do not scale to values above x"
+msgstr "schaal niet naar waardes boven 'x'"
+
+#: help.c:288
+msgid "do not show graphs (in ncurses/GUI mode)"
+msgstr "toon geen grafieken"
+
+#: help.c:292
+msgid "show the version"
+msgstr "toon de versie van dit programma"
+
+#: help.c:305
+#, c-format
+msgid "Voorbeeld:\n"
+msgstr ""
+
+#: io.c:43
+#: io.c:78
+#, c-format
+msgid "myread::select failed: %s"
+msgstr "leesfout: %s"
+
+#: io.c:94
+#, c-format
+msgid "myread::read failed: %s"
+msgstr "leesfout: %s"
+
+#: io.c:138
+#, c-format
+msgid "mywrite::select failed: %s"
+msgstr "selecteer fout: %s"
+
+#: io.c:152
+#, c-format
+msgid "mywrite::write failed: %s"
+msgstr "schrijffout: %s"
+
+#: io.c:174
+#, c-format
+msgid "set_fd_nonblocking failed! (%s)\n"
+msgstr "\"set_fd_nonblocking\" fout: %s\n"
+
+#: io.c:187
+#, c-format
+msgid "set_fd_blocking failed! (%s)\n"
+msgstr "\"set_fd_blocking\" fout: %s\n"
+
+#: main.c:109
+#: main.c:108
+#, c-format
+msgid "%s, run time: %.3fs, press ctrl + c to stop"
+msgstr "%s, loop tijd: %.3fs, druk op ctrl + c om het programma te stoppen"
+
+#: main.c:244
+#: main.c:243
+#, c-format
+msgid "Got signal %d\n"
+msgstr "Signaal %d\n"
+
+#: main.c:255
+#: main.c:254
+#, c-format
+msgid "Cannot open password-file %s"
+msgstr "Kan het toegangscodebestand '%s' niet openen"
+
+#: main.c:258
+#: main.c:257
+#, c-format
+msgid "Problem reading password from file %s"
+msgstr "Probleem bij het lezen van de toegangscode uit bestand '%s'"
+
+#: main.c:365
+#: main.c:364
+#, c-format
+msgid "URL too big, HTTPing has a %d bytes limit"
+msgstr "URL is te groot, HTTPing heeft daar een limiet van %d bytes op"
+
+#: main.c:384
+#: main.c:383
+msgid "using \"http://\" with SSL enabled (-l)"
+msgstr "\"http://\" gebruikt met SSL ingeschakeld (-l)"
+
+#: main.c:519
+#: main.c:518
+#, c-format
+msgid "AGG[%d]: %d values, min/avg/max%s = %.1f/%.1f/%.1f"
+msgstr "CUM[%d]: %d waardes, min/gem/max%s = %.1f/%.1f/%.1f"
+
+#: main.c:519
+#: main.c:2294
+#: main.c:518
+#: main.c:2289
+msgid "/sd"
+msgstr "/sd"
+
+#: main.c:576
+#: main.c:575
+msgid "-n: missing parameter\n"
+msgstr "-n: ontbrekende parameter\n"
+
+#: main.c:594
+#: main.c:603
+#: main.c:593
+#: main.c:602
+#, c-format
+msgid "cannot convert ip address '%s' (for -y)\n"
+msgstr "kan het IP-adres '%s' niet vertalen (-y)\n"
+
+#: main.c:710
+#: main.c:709
+#, c-format
+msgid "CRITICAL - connecting failed: %s"
+msgstr "KRITIEK - verbinding mislukt: %s"
+
+#: main.c:715
+#: main.c:714
+#, c-format
+msgid "CRITICAL - average httping-time is %.1f\n"
+msgstr "KRITIEK - gemiddelde HTTPing tijd is %.1f\n"
+
+#: main.c:720
+#: main.c:719
+#, c-format
+msgid "WARNING - average httping-time is %.1f\n"
+msgstr "WAARSCHUWING - gemiddelde HTTPing tijd is %.1f\n"
+
+#: main.c:724
+#: main.c:723
+#, c-format
+msgid "OK - average httping-time is %.1f (%s)|ping=%f\n"
+msgstr "OK - gemiddelde HTTPing-tijd is %.1f (%s)|ping=%f\n"
+
+#: main.c:734
+#: main.c:733
+#, c-format
+msgid "OK - all fine, avg httping time is %.1f|ping=%f\n"
+msgstr "OK - gemiddelde HTTPing-tijd is %.1f|ping=%f\n"
+
+#: main.c:738
+#: main.c:737
+#, c-format
+msgid "%s: - failed: %s"
+msgstr "%s: - mislukt: %s"
+
+#: main.c:1025
+#: main.c:1020
+#, c-format
+msgid ""
+"\n"
+" *** -A is no longer required ***\n"
+"\n"
+msgstr ""
+"\n"
+" *** -A is niet langer nodig ***\n"
+"\n"
+
+#: main.c:1170
+#: main.c:1165
+msgid "-i cannot have a value smaller than zero"
+msgstr "-i waarde kan niet kleiner dan 0 zijn"
+
+#: main.c:1224
+#: main.c:1232
+#: main.c:1219
+#: main.c:1227
+msgid "-n and -N are mutual exclusive\n"
+msgstr "-n en -N zijn wederzijds uitsluitende\n"
+
+#: main.c:1253
+#: main.c:1248
+#, c-format
+msgid "Warning: TCP TFO is not supported. Disabling.\n"
+msgstr "Let op: TCP TFO is niet ondersteund.\n"
+
+#: main.c:1269
+#: main.c:1264
+#, c-format
+msgid ""
+"\n"
+"\n"
+"Please run:\n"
+"\t%s --help\n"
+"to see a list of options.\n"
+"\n"
+msgstr ""
+"\n"
+"\n"
+"Start:\n"
+"\t%s --help\n"
+"om een lijst van opties te zien.\n"
+"\n"
+
+#: main.c:1281
+#, c-format
+msgid ""
+"No URL/host to ping given\n"
+"\n"
+msgstr ""
+"Geen URL of systeemnaam gespecificeerd om te pingen\n"
+"\n"
+
+#: main.c:1291
+#: main.c:1286
+msgid "Cannot combine -m, -M and -K"
+msgstr "-m, -M en -K kunnen niet gecombineerd worden"
+
+#: main.c:1294
+#: main.c:1289
+msgid "Aggregates can only be used in non-machine/json-output mode"
+msgstr "Cumulatieven kunnen niet in machine-uitvoer/json-uitvoer modi gebruikt worden"
+
+#: main.c:1299
+#: main.c:1294
+msgid "-b/-B can only be used when also using -G (GET instead of HEAD) or -l (use SSL)\n"
+msgstr "-b/-B kunnen alleen gebruikt worden ism -G or -l\n"
+
+#: main.c:1302
+#: main.c:1297
+msgid "TCP Fast open and SSL not supported together\n"
+msgstr "\"TCP Fast open\" en SSL kunnen niet gecombineerd worden\n"
+
+#: main.c:1332
+#: main.c:1327
+msgid ""
+"\n"
+"Auto enabling SSL due to https-URL"
+msgstr ""
+"\n"
+"SSL ingeschakeld vanwege https-URL"
+
+#: main.c:1338
+#: main.c:1333
+#, c-format
+msgid "Auto enabling SSL due to https-URL"
+msgstr "SSL ingeschakeld vanwege https-URL"
+
+#: main.c:1347
+#: main.c:1342
+#, c-format
+msgid ""
+"\n"
+"Connecting to host %s, port %d and requesting file %s"
+msgstr ""
+"\n"
+"Verbinden met %s:%d en opvragen van bestand %s"
+
+#: main.c:1350
+#: main.c:1345
+#, c-format
+msgid ""
+"\n"
+"Using proxyserver: %s:%d"
+msgstr ""
+"\n"
+"Proxy %s:%d wordt gebruikt"
+
+#: main.c:1355
+#: main.c:1350
+#, c-format
+msgid ""
+"Connecting to host %s, port %d and requesting file %s\n"
+"\n"
+msgstr ""
+"Verbinden met %s:%d en opvragen van bestand %s\n"
+"\n"
+
+#: main.c:1358
+#: main.c:1353
+#, c-format
+msgid "Using proxyserver: %s:%d\n"
+msgstr "Proxy: %s:%d\n"
+
+#: main.c:1369
+#: main.c:1364
+msgid "problem creating SSL context"
+msgstr "Probleem bij aanmaken SSL-context"
+
+#: main.c:1389
+#: main.c:1384
+msgid "Interval must be > 0 when using adaptive interval"
+msgstr "Interval moet groter dan 0 zijn bij adaptieve interval"
+
+#: main.c:1417
+#: main.c:1435
+#: main.c:1519
+#: main.c:1412
+#: main.c:1430
+#: main.c:1514
+#, c-format
+msgid ""
+"\n"
+"Resolving hostname %s"
+msgstr ""
+"\n"
+"Vertalen systeemnaam '%s'"
+
+#: main.c:1427
+#: main.c:1452
+#: main.c:1545
+#: main.c:1422
+#: main.c:1447
+#: main.c:1540
+#, c-format
+msgid "No valid IPv4 or IPv6 address found for %s"
+msgstr "Geen geldig IPv4 of IPv6 adres gevonden voor '%s'"
+
+#: main.c:1579
+#: main.c:1574
+msgid "Will no longer inform about request headers too large."
+msgstr "Zal niet langer meldingen tonen over te grote verzoeken."
+
+#: main.c:1581
+#: main.c:1576
+#, c-format
+msgid "Request headers > 4KB! (%d bytes) This may give failures with some HTTP servers."
+msgstr "Verzoek is groter dan 4KB! (%d bytes) Dit kan problemen opleveren met sommige HTTP-servers."
+
+#: main.c:1685
+#: main.c:1680
+msgid "timeout connecting to host"
+msgstr "systeem reageerde niet op tijd"
+
+#: main.c:1748
+#: main.c:1743
+msgid "error sending request to host"
+msgstr "probleem bij verzenden verzoek naar systeem"
+
+#: main.c:1750
+#: main.c:1800
+#: main.c:1745
+#: main.c:1795
+msgid "timeout sending to host"
+msgstr "systeem reageerde niet op tijd bij verzenden verzoek"
+
+#: main.c:1752
+#: main.c:1747
+msgid "retrieved invalid data from host"
+msgstr "ongeldige data ontvangen van systeem"
+
+#: main.c:1756
+#: main.c:1751
+msgid "connection prematurely closed by peer"
+msgstr "verbinding voortijdig gesloten door systeem"
+
+#: main.c:1790
+#: main.c:1785
+msgid ""
+"\n"
+"No longer emitting message about \"still data in transit\""
+msgstr ""
+"\n"
+"Er zullen geen meldingen meer getoond worden over data die nog getransporteerd wordt."
+
+#: main.c:1792
+#: main.c:1787
+#, c-format
+msgid ""
+"\n"
+"HTTP server started sending data with %d bytes still in transit"
+msgstr ""
+"\n"
+"HTTP server begon al een reaktie te versturen terwijl er nog %d bytes onderweg waren"
+
+#: main.c:1813
+#: main.c:1808
+msgid "failed to obtain TOS info"
+msgstr "probleem bij ophalen TOS-informatie"
+
+#: main.c:1827
+#: main.c:1822
+msgid ""
+"\n"
+"No longer emitting message about \"more data than response headers\""
+msgstr ""
+"\n"
+"De melding \"HTTP server verzond meer data dan alleen de antwoord metadata\" zal niet meer getoond worden."
+
+#: main.c:1829
+#: main.c:1824
+msgid ""
+"\n"
+"HTTP server sent more data than just the response headers"
+msgstr ""
+"\n"
+"HTTP server verzond meer data dan alleen de antwoord metadata"
+
+#: main.c:1878
+#: main.c:1873
+msgid "'Content-Length'-header missing!"
+msgstr "'Content-Length' metadata ontbreekt"
+
+#: main.c:1910
+#: main.c:1905
+msgid "short read during receiving reply-headers from host"
+msgstr "ontvangprobleem bij metadata van systeem"
+
+#: main.c:1912
+#: main.c:1907
+msgid "timeout while receiving reply-headers from host"
+msgstr "geen reactie bij ontvangen metadata van systeem"
+
+#: main.c:1945
+#: main.c:1940
+msgid "read of response body dataa failed"
+msgstr "lezen van reactiedata mislukt"
+
+#: main.c:1980
+#: main.c:1975
+msgid "error shutting down ssl"
+msgstr "probleem bij stoppen SSL-verbinding"
+
+#: main.c:2026
+#: main.c:2087
+#: main.c:2021
+#: main.c:2082
+#, c-format
+msgid "getnameinfo() failed: %d (%s)"
+msgstr "getnameinfo() faalde: %d (%s)"
+
+#: main.c:2061
+#: main.c:2056
+msgid "connected to"
+msgstr "verbinden met"
+
+#: main.c:2061
+#: main.c:2056
+msgid "pinged host"
+msgstr "gepingde systeem"
+
+#: main.c:2105
+#: main.c:2100
+#, c-format
+msgid "%s%s%s%s%s:%s%d%s (%d/%d bytes), seq=%s%d%s "
+msgstr "%s%s%s%s%s:%s%d%s (%d/%d bytes), volgnr=%s%d%s "
+
+#: main.c:2107
+#: main.c:2102
+#, c-format
+msgid "%s%s%s%s%s:%s%d%s (%d bytes), seq=%s%d%s "
+msgstr "%s%s%s%s%s:%s%d%s (%d bytes), volgnr=%s%d%s "
+
+#: main.c:2113
+#: main.c:2114
+#: nc.c:721
+#: main.c:2108
+#: main.c:2109
+msgid "   n/a"
+msgstr "   ---"
+
+#: main.c:2119
+#: main.c:2114
+#, c-format
+msgid "time=%s+%s+%s+%s+%s%s=%s%s%s%s ms %s%s%s"
+msgstr "tijd=%s+%s+%s+%s+%s%s=%s%s%s%s ms %s%s%s"
+
+#: main.c:2129
+#: main.c:2124
+#, c-format
+msgid "time=%s%s%s ms %s%s%s"
+msgstr "tijd=%s%s%s ms %s%s%s"
+
+#: main.c:2149
+#: main.c:2144
+msgid "not "
+msgstr "niet "
+
+#: main.c:2150
+#: main.c:2145
+msgid "compressed)"
+msgstr "gecomprimeerd)"
+
+#: main.c:2162
+#: main.c:2157
+#, c-format
+msgid " toff=%d"
+msgstr " tijdoffset=%d"
+
+#: main.c:2166
+#: main.c:2161
+#, c-format
+msgid " age=%d"
+msgstr " leeftijd=%d"
+
+#: main.c:2282
+#: main.c:2277
+#, c-format
+msgid "--- %s ping statistics ---\n"
+msgstr "--- %s ping statistieken ---\n"
+
+#: main.c:2285
+#: main.c:2280
+#, c-format
+msgid "internal error! (curncount)\n"
+msgstr "interne fout! (curncount)\n"
+
+#: main.c:2290
+#: main.c:2285
+#, c-format
+msgid "%s%d%s connects, %s%d%s ok, %s%3.2f%%%s failed, time %s%s%.0fms%s\n"
+msgstr "%s%d%s verbindingen, %s%d%s ok, %s%3.2f%%%s mislukt, tijd %s%s%.0fms%s\n"
+
+#: main.c:2294
+#: main.c:2289
+#, c-format
+msgid "round-trip min/avg/max%s = %s%.1f%s/%s%.1f%s/%s%.1f%s"
+msgstr "retour min/gem/max%s = %s%.1f%s/%s%.1f%s/%s%.1f%s"
+
+#: main.c:2305
+#: main.c:2300
+#, c-format
+msgid "Transfer speed: min/avg/max = %s%f%s/%s%f%s/%s%f%s KB\n"
+msgstr "Verzendsnelheid: min/gem/max = %s%f%s/%s%f%s/%s%f%s KB\n"
+
+#: mssl.c:79
+#, c-format
+msgid "READ_SSL: io-error: %s"
+msgstr "SSL lezen, I/O fout: %s"
+
+#: mssl.c:110
+#, c-format
+msgid "WRITE_SSL: io-error: %s"
+msgstr "SSL schrijven, I/O fout: %s"
+
+#: mssl.c:141
+#, c-format
+msgid "problem setting receive timeout (%s)"
+msgstr "probleem bij instellen ontvangsttijdslimiet (%s)"
+
+#: mssl.c:147
+#, c-format
+msgid "problem setting transmit timeout (%s)"
+msgstr "probleem bij instellen verzendtijdslimiet (%s)"
+
+#: mssl.c:159
+#, c-format
+msgid "problem starting SSL connection: %d"
+msgstr "probleem bij starten SSL verbinding: %d"
+
+#: mssl.c:259
+msgid "Problem sending request to proxy"
+msgstr "Probleem bij verzenden verzoek naar proxy"
+
+#: mssl.c:268
+msgid "Problem retrieving proxy response"
+msgstr "Probleem in ontvangen proxyreactie"
+
+#: mssl.c:282
+msgid "Invalid proxy response headers"
+msgstr "Ongeldige proxyreactie"
+
+#: mssl.c:289
+#, c-format
+msgid "Proxy indicated error: %s"
+msgstr "Proxy gaf een fout aan: %s"
+
+#: nc.c:57
+msgid "realloc issue"
+msgstr "geheugenfout"
+
+#: nc.c:542
+#, c-format
+msgid "highest: %6.2fHz, avg: %6.2fHz"
+msgstr "hoogste: %6.2fHz, gem: %6.2fHz"
+
+#: nc.c:668
+#, c-format
+msgid "graph range: %7.2fms - %7.2fms    "
+msgstr "grafiekbandbreedte: %7.2fms - %7.2fms "
+
+#: nc.c:732
+#, c-format
+msgid "%s:    n/a"
+msgstr "%s:    ---"
+
+#: nc.c:749
+msgid "latest"
+msgstr "laatste"
+
+#: nc.c:749
+#: nc.c:769
+msgid "min"
+msgstr "min"
+
+#: nc.c:749
+#: nc.c:769
+msgid "avg"
+msgstr "gem"
+
+#: nc.c:749
+#: nc.c:769
+msgid "max"
+msgstr "max"
+
+#: nc.c:749
+#: nc.c:769
+msgid "sd"
+msgstr "sd"
+
+#: nc.c:750
+msgid "resolve"
+msgstr "vertaal"
+
+#: nc.c:751
+msgid "connect"
+msgstr "verbind"
+
+#: nc.c:752
+msgid "ssl    "
+msgstr "ssl    "
+
+#: nc.c:753
+msgid "send   "
+msgstr "zend   "
+
+#: nc.c:754
+msgid "request"
+msgstr "verzoek"
+
+#: nc.c:755
+msgid "close  "
+msgstr "sluiten"
+
+#: nc.c:756
+msgid "total  "
+msgstr "totaal "
+
+#: nc.c:760
+#, c-format
+msgid "ok: %3d, fail: %3d%s, scc: %s, kalman: %s"
+msgstr "ok: %2d, mislukt: %2d%s, scc: %s, Kalman: %s"
+
+#: nc.c:760
+msgid ", with TFO"
+msgstr ", met TFO"
+
+#: nc.c:769
+msgid "cur"
+msgstr "nu"
+
+#: nc.c:770
+msgid "t offst"
+msgstr "t offst"
+
+#: nc.c:773
+msgid "tcp rtt"
+msgstr "TCP RTT"
+
+#: nc.c:775
+msgid "headers"
+msgstr "meta   "
+
+#: nc.c:782
+#, c-format
+msgid "# cookies: %d"
+msgstr "# cookies: %d"
+
+#: nc.c:784
+#, c-format
+msgid "trend: %c%6.2f%%, re-tx: %2d, pmtu: %5d, TOS: %02x"
+msgstr "trend: %c%6.2f%%, re-tx: %2d, pmtu: %5d, TOS: %02x"
+
+#: nc.c:787
+#, c-format
+msgid "HTTP rc: %s, SSL fp: %s"
+msgstr "HTTP rc: %s, SSL va: %s"
+
+#: nc.c:787
+msgid "n/a"
+msgstr "---"
+
+#: nc.c:795
+#, c-format
+msgid "http result code: %s"
+msgstr "HTTP statuscode: %s"
+
+#: nc.c:799
+#, c-format
+msgid ""
+"\n"
+"SSL fingerprint: %s"
+msgstr ""
+"\n"
+"SSL vingerafdruk: %s"
+
+#: res.c:36
+#, c-format
+msgid "Resolving %s %sfailed: %s"
+msgstr "Vertalen %s %smislukt: %s"
+
+#: res.c:36
+msgid "(IPv6) "
+msgstr "(IPv6) "
+
+#: res.c:71
+#, c-format
+msgid "Problem resolving %s (IPv4): %s"
+msgstr "Probleem vertalen %s (IPv4): %s"
+
+#: socks5.c:56
+#, c-format
+msgid "socks5connect: reply with requested authentication method does not say version 5 (%02x)"
+msgstr "socks5connect: reactie geeft niet versie 5 aan (%02x)"
+
+#: socks5.c:70
+#, c-format
+msgid "socks5connect: socks5 refuses our authentication methods: %02x"
+msgstr "socks5connect: socks5 systeem wijst onze authenticatie methode af: %02x"
+
+#: socks5.c:81
+msgid "socks5connect: socks5 server requests username/password authentication"
+msgstr "socks5connect: systeem vraagt gebruikersnaamauthenticatie"
+
+#: socks5.c:90
+msgid "socks5connect: failed transmitting username/password to socks5 server"
+msgstr "socks5connect: probleem bij verzenden gebrukersnaam/toegangscode naar systeem"
+
+#: socks5.c:96
+msgid "socks5connect: failed receiving authentication reply"
+msgstr "socks5connect: authenticatie reactie ontvangen mislukt"
+
+#: socks5.c:102
+msgid "socks5connect: password authentication failed"
+msgstr "socks5connect: authenticatie faalde"
+
+#: socks5.c:116
+#, c-format
+msgid "Cannot resolve %s"
+msgstr "Kan %s niet vertalen"
+
+#: socks5.c:133
+msgid "socks5connect: failed to transmit associate request"
+msgstr "socks5connect: \"associatie\"-verzoek verzenden mislukt"
+
+#: socks5.c:139
+msgid "socks5connect: command reply receive failure"
+msgstr "socks5connect: commando-reactie ontvangen mislukt"
+
+#: socks5.c:146
+#, c-format
+msgid "socks5connect: bind request replies with version other than 0x05 (%02x)"
+msgstr "socks5connect: verbindingsreactie geeft ander versienummer (%02x) dan 0x05 terug"
+
+#: socks5.c:152
+#, c-format
+msgid "socks5connect: failed to connect (%02x)"
+msgstr "socks5connect: verbinden mislukt (%02x)"
+
+#: socks5.c:158
+#, c-format
+msgid "socks5connect: only accepting bind-replies with IPv4 address (%02x)"
+msgstr "socks5connect: alleen \"bind\"-reakties voor IPv4 ondersteund (%02x)"
+
+#: tcp.c:31
+#: tcp.c:42
+#, c-format
+msgid "could not set TCP_NODELAY on socket (%s)"
+msgstr "kan TCP_NODELAY niet inschakelen op verbinding (%s)"
+
+#: tcp.c:57
+#, c-format
+msgid "problem creating socket (%s)"
+msgstr "probleem bij maken socket (%s)"
+
+#: tcp.c:69
+#, c-format
+msgid "error setting sockopt to interface (%s)"
+msgstr "sockopt zetten op adapter mislukt (%s)"
+
+#: tcp.c:75
+#, c-format
+msgid "error binding to interface (%s)"
+msgstr "probleem bij binden aan adapter (%s)"
+
+#: tcp.c:84
+#, c-format
+msgid "error setting MTU size (%s)"
+msgstr "probleem bij instellen MTU-grootte (%s)"
+
+#: tcp.c:101
+#, c-format
+msgid "error setting transmit buffer size (%s)"
+msgstr "probleem bij instellen verzendbuffergrootte (%s)"
+
+#: tcp.c:110
+#, c-format
+msgid "error setting receive buffer size (%s)"
+msgstr "probleem bij instellen ontvangstbuffergrootte (%s)"
+
+#: tcp.c:119
+#, c-format
+msgid "error setting priority (%s)"
+msgstr "probleem bij instellen prioriteit (%s)"
+
+#: tcp.c:128
+msgid "failed to set TOS info"
+msgstr "probleem bij instellen TOS-info"
+
+#: tcp.c:165
+#, c-format
+msgid "TCP TFO Not Supported. Please check if \"/proc/sys/net/ipv4/tcp_fastopen\" is 1. Disabling TFO for now.\n"
+msgstr "TCP TFO is niet ondersteund. Controleer of \"/proc/sys/net/ipv4/tcp_fastopen\" de waarde 1 bevat.\n"
+
+#: tcp.c:195
+#, c-format
+msgid "problem connecting to host: %s"
+msgstr "probleem bij verbinden met systeem: %s"
+
+#: tcp.c:208
+msgid "connect time out"
+msgstr "verbindingstimeout"
+
+#: tcp.c:216
+#, c-format
+msgid "select() failed: %s"
+msgstr "select() mislukt: %s"
+
+#: tcp.c:228
+#, c-format
+msgid "getsockopt failed (%s)"
+msgstr "getsockopt mislukt (%s)"
+
+#: tcp.c:240
+#, c-format
+msgid "could not connect (%s)"
+msgstr "kan niet verbinden (%s)"
+
+#: utils.c:25
+msgid "gettimeofday failed"
+msgstr "gettimeofday mislukt"
+
+#~ #: main.c:1276 main.c:1271
+
+#~ msgid "Cannot combine maximum MTU size setting with proxy connections or SSL"
+#~ msgstr ""

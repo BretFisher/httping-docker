@@ -1,0 +1,96 @@
+#! /bin/sh
+
+FILE=`mktemp`
+FILE2=`mktemp`
+
+echo \*\*\* HTTPing v`grep VERSION version | cut -d = -f 2` configure script \*\*\*
+echo
+
+if [ -z "$CC" ]
+then
+	CC=gcc
+fi
+
+F_TFO=0
+F_NC=0
+F_OS=0
+F_FW=0
+for var in "$@"
+do
+	case "$var" in
+		--with-tfo)
+			F_TFO=1
+			;;
+
+		--with-ncurses)
+			F_NC=1
+			;;
+
+		--with-openssl)
+			F_OS=1
+			;;
+
+		--with-fftw3)
+			F_FW=1
+			;;
+
+		--help)
+			echo "--with-tfo      force enable tcp fast open"
+			echo "--with-ncurses  force enable ncurses"
+			echo "--with-openssl  force enable openssl"
+			echo "--with-fftw3    force enable fftw3"
+			exit 0
+			;;
+
+		*)
+			echo WARNING: Command line parameter \"$var\" is not understood.
+			echo Re-run this script with --help to see a list of switches.
+			;;
+	esac
+done
+
+$CC -O0 -o $FILE test_TFO.c 2> $FILE2
+if [ $? -eq 0 ] || [ $F_TFO -eq 1 ] ; then
+	echo \+ system supports TCP fast open
+	TFO="TFO=yes"
+else
+	echo \- this system does NOT support TCP fast open - this is an optional feature
+	TFO=""
+fi
+
+$CC -O0 -o $FILE test_ncurses.c -lncursesw 2> $FILE2
+if [ $? -eq 0 ] || [ $F_NC -eq 1 ] ; then
+	echo \+ system has ncurses development libraries
+	NC="NC=yes"
+else
+	echo \- this system does NOT have the ncurses development libraries - they are optional
+	NC=""
+fi
+
+$CC -O0 -o $FILE test_openssl.c  -lssl -lcrypto 2> $FILE2
+if [ $? -eq 0 ] || [ $F_OS -eq 1 ] ; then
+	echo \+ system has OpenSSL development libraries
+	SSL="SSL=yes"
+else
+	echo \- this system does NOT have the OpenSSL development libraries - they are optional
+	SSL="SSL=no"
+fi
+
+$CC -O0 -o $FILE test_fftw3.c -lfftw3 2> $FILE2
+if [ $? -eq 0 ] || [ $F_FW -eq 1 ] ; then
+	echo \+ system has FFTW3 development libraries
+	FW="FW=yes"
+else
+	echo \- this system does NOT have the FFTW3 development libraries - they are optional and only useful when also including ncurses
+	FW=""
+fi
+
+> makefile.inc
+echo $NC  >> makefile.inc
+echo $SSL >> makefile.inc
+echo $TFO >> makefile.inc
+echo $FW >> makefile.inc
+
+rm -f $FILE $FILE2
+
+echo
