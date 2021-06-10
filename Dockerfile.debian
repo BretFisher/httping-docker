@@ -54,6 +54,6 @@ COPY --from=build /source/httping /usr/local/bin/
 ENV TERM=xterm-256color
 
 # add -Y for nice color output!
-ENTRYPOINT ["httping" "-Y"]
+ENTRYPOINT ["httping", "-Y"]
 
 CMD ["--version"]
