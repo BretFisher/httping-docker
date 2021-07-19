@@ -39,7 +39,7 @@ jobs:
         # BuildKit (used with `docker buildx`) is the best way to build images
         name: Set up Docker Buildx
         id: buildx
-        uses: docker/setup-buildx-action@v1.5.0
+        uses: docker/setup-buildx-action@v1.5.1
       -
         # This makes image builds fast!      
         name: Cache Docker layers
