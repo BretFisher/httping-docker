@@ -32,5 +32,8 @@ jobs:
     uses: bretfisher/github-actions-templates/.github/workflows/docker-build-and-push.yaml@main
     with:
       dockerhub-username: bretfisher
+      image-names: |
+          bretfisher/httping
+          ghcr.io/bretfisher/httping
     secrets:
       dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
