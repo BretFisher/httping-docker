@@ -30,3 +30,7 @@ jobs:
     # use Reusable Workflows
     # https://docs.github.com/en/actions/learn-github-actions/reusing-workflows
     uses: bretfisher/github-actions-templates/.github/workflows/docker-build-and-push.yaml@main
+    with:
+      dockerhub-username: ${{ secrets.DOCKERHUB_USERNAME }}
+    secrets:
+      dockerhub-token: ${{ secrets.DOCKERHUB_TOKEN }}
