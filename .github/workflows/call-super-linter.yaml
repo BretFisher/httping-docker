@@ -10,6 +10,7 @@ on:
   pull_request:
 
 jobs:
+
   call-super-linter:
 
     name: Call Super-Linter
@@ -26,7 +27,7 @@ jobs:
     
     ### Optional settings examples
     
-    # with:
+    with:
       ### For a DevOps-focused repository. Prevents some code-language linters from running
       ### defaults to false
       # devops-only: false
