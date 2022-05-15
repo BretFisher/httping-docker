@@ -51,7 +51,7 @@ jobs:
       ### defaults to:
       image-names: |
         bretfisher/httping
-        ghcr.io/httping
+        ghcr.io/bretfisher/httping
 
       ### REQUIRED set rules for tagging images, based on special action syntax:
       ### https://github.com/docker/metadata-action#tags-input
