@@ -1,7 +1,7 @@
 # Docker image of httping
 
 [![GitHub Super-Linter](https://github.com/bretfisher/httping-docker/workflows/Lint%20Code%20Base/badge.svg)](https://github.com/marketplace/actions/super-linter)
-![Build and Push Image](https://github.com/bretfisher/httping-docker/actions/workflows/docker-build-and-push.yaml/badge.svg?branch=main)
+![Build and Push Image](https://github.com/bretfisher/httping-docker/actions/workflows/call-docker-build.yaml/badge.svg?branch=main)
 
 This container image is stored on docker hub: [bretfisher/httping](https://hub.docker.com/r/bretfisher/httping/) and in this GitHub repositories packages.
 
