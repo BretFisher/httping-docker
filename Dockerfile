@@ -1,4 +1,4 @@
-FROM alpine as build
+FROM alpine AS build
 
 RUN apk add --no-cache \
     make \
@@ -23,7 +23,10 @@ ENV LDFLAGS="-static -lintl"
 
 RUN ./configure --with-tfo --with-ncurses --with-openssl --with-fftw3 && make
 
-FROM alpine as release
+FROM alpine AS release
+
+RUN apk add --no-cache \
+    ncurses
 
 COPY --from=build /source/httping /usr/local/bin/
 
