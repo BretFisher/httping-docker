@@ -1,4 +1,4 @@
-FROM debian:bullseye as build
+FROM debian:bookworm AS build
 # Ping with HTTP requests, see http://www.vanheusden.com/httping/
 # built directly from master
 
@@ -14,13 +14,11 @@ RUN set -x \
         gettext \
         git \
         libncurses-dev \
-        libncursesw-dev \
         libssl-dev \
         libfftw3-dev \
         libfftw3-bin \
         libfftw3-double3 \
         libgomp1 \
-        libssl1.1 \
         openssl \
         apt-transport-https \
         ca-certificates \
@@ -33,7 +31,7 @@ COPY source .
 RUN make
 
 # to prevent image bloat, lets do a multi-stage build and only copy the binary needed
-FROM debian:bullseye-slim as release
+FROM debian:bookworm-slim AS release
 
 RUN set -x \
     && apt-get update \
@@ -44,7 +42,6 @@ RUN set -x \
         libfftw3-dev \
         libfftw3-double3 \
         libgomp1 \
-        libssl1.1 \
         libncurses-dev \
         openssl \
     && rm -rf /var/lib/apt/lists/*
