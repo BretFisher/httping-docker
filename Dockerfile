@@ -10,6 +10,7 @@ RUN apk add --no-cache \
     gettext-dev \
     gettext-static \
     fftw-dev \
+    fftw-static \
     fftw-double-libs \
     fftw-long-double-libs
 
